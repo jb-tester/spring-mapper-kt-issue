@@ -8,8 +8,9 @@ import org.springframework.web.bind.annotation.RestController
 class UserController(private val userService: UserService) {
 
     @GetMapping()
-    fun getDto(): UserDto? {
-        return userService.createDto()
+    fun getDto(): List<UserDto> {
+        userService.populateDB()
+        return userService.getAllUserDTO()
     }
 
 }
