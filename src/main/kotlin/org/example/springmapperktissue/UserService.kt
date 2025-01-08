@@ -4,7 +4,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 class UserService(
-    // "Could not autowire. There is more than one bean..." after the project is built
+    // fixed: "Could not autowire. There is more than one bean..." after the project is built
+    // now: navigates to the generated implementation, not to the mapper interface in sources
     private val mapper: UserMapper,
     private val userRepository: UserRepository
 ){
